@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열메서드</title>
+</head>
+<body>
+    <script>
+        //소녀시대 배열
+        var ss = ['윤아', '수영', '효연', '서현', '유리', '티파니', '태연', '써니', '제시카'];
+
+        // sort() : 배열을 오름차순으로 정렬 - 대신 문자열 기준
+        ss.sort();
+        console.log(ss);
+
+        let nums = [7, 12, 32, 23, 45];
+        
+        console.log(nums.sort());
+        nums.sort(function(left, right){
+            return left - right; // 오름차순
+            // return right - left; // 내림차순
+        });
+        
+        console.log(nums);
+
+        let students = [
+            {
+                id: "st001",
+                name: "김남준",
+                age: 28,
+                email: "rm@gmail.com"
+            },
+            {
+                id: "st002",
+                name: "김석진",
+                age: 30,
+                email: "jin@gmail.com"
+            },
+            {
+                id: "st003",
+                name: "민윤기",
+                age: 29,
+                email: "suga@gmail.com"
+            }
+        ]
+
+        console.log(students.sort((a, b)=>{ // 앞의 배열 데이터와 뒤의 배열 데이터를 구분
+            if(a.id > b.id) return 1;
+            if(a.id < b.id) return -1;
+            return 0;
+        }));
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수키워드</title>
+</head>
+<body>
+    <script>
+        // 변수키워드 : 재선언, 재할당, 범위
+
+        // 1. var : 재선언 O, 재할당 O, 범위기준이 함수
+        var a = 10;
+        var a = 20; // 재선언
+        a = 30; // 재할당
+
+        // 2. let : 재선언 X, 재할당 O, 범위기준이 코드블록 { }
+        let b = 10;
+        // let b = 20;
+        b = 30;
+
+        // ㄴ 값이 증가되거나 변할 때 사용
+
+        // 3. const : 재선언 X, 재할당 X, 범위기준이 코드블록 { }
+        const c = 10;
+        // c = 20;
+
+
+        // 전역변수
+        var num = 1;
+
+        for(var i=0; i<5; i++){
+            console.log(num)
+            num++;
+            var d = 2; // 전역변수 - 함수 내부가 아님
+        }
+        console.log('num');
+
+
+        console.log('==========');
+
+
+        // 전역변수
+        let j = 1;
+
+        for(let j=0; j<5; j++){ // 지역변수
+            console.log(j)
+        }
+        console.log(j);
+    </script>
+</body>
+</html>

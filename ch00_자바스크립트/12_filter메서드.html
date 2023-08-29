@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터 메서드 - 데이터 삭제할 때</title>
+</head>
+<body>
+    <script>
+        // filter() : 함수에서 제공한 조건을 통과하는 요소로 새롭게 배열을 만드는 메서드
+        // filter(function(현재값, 인덱스번호, 기존배열){}, 함수에사용될값)
+
+        const nums = [3, 5, 6, 7, 9]
+
+        // 7만 제외하고 새로운 배열값으로 처리
+        const newNums = nums.filter(num => {
+            return num !== 7;
+        });
+
+        console.log(newNums)
+    </script>
+</body>
+</html>
