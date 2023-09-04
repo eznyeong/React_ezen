@@ -74,7 +74,6 @@ function BucketCreate({ onCreate }) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-
     // props받은 명령으로 변경
     onCreate(value);
 

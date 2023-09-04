@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { createStore } from "redux"; // 스토어 생성 함수 호출 (밑줄 상관 X)

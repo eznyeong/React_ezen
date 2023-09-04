@@ -63,13 +63,13 @@ const initialState = [
 // 4. 리듀서 함수
 export default function buckets (state = initialState, action) {
     switch (action.type) {
-      case "CREATE_BUCKET":
+      case CREATE_BUCKET:
         return state.concat(action.bucket);
-      case "TOGGLE_BUCKET":
+      case TOGGLE_BUCKET:
         return state.map((bucket) =>
           bucket.id === action.id ? { ...bucket, chk: !bucket.chk } : bucket
         );
-      case "REMOVE_BUCKET":
+      case REMOVE_BUCKET:
         return state.filter((bucket) => bucket.id !== action.id);
       default:
         return state;

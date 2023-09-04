@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <h3>일반함수 값: <span id="test01"></span></h3>
+    <h3>setTimeout 값: <span id="test02"></span></h3>
+    <script>
+        // 함수가 동기적으로 처리 : 호출된 순서대로 명령이 처리되었음
+        // 함수가 비동기적으로 처리 : 호출된 순서대로 처리가 안되었음
+        // 1. 타이머함수 쓰는 경우
+        // 2. 서버에서 데이터를 가져올 때 로딩시간이 생기는 경우
+        // 3. 암호화처리시에도 비동기 처리
+        // 4. 파일 읽을 때(이미지나 동영상 구현이 모두 되어야 할 때)
+
+        //문서객체 선택
+        const test01 = document.getElementById('test01');
+        const test02 = document.getElementById('test02');
+
+        function output01(){
+            test01.innerHTML = '저는 일반함수 값입니다!';
+        }
+
+        function output02(){
+            test02.innerHTML = '저는 setTimeout에서 실행되었습니다.';
+        }
+
+        // 타이머함수 먼저 호출
+        setTimeout(output01, 5000);
+
+        // 일반함수를 나중에 호출
+        output02();
+    </script>
+</body>
+</html>
