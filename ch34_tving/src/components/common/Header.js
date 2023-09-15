@@ -82,6 +82,6 @@ function Header() {
             </ul>
         </HeaderBlock>
     );
-}
+};
 
 export default Header;

@@ -19,7 +19,7 @@ export const getMains = createPromiseThunk(GET_MAINS, mainAPI.getMains);
 //4. 초기값 지정
 const initialState = {
     mains: reducerUtils.initial()
-}
+};
 
 //5. 리듀서 함수 선언
 export default function mains(state = initialState, action){
@@ -33,4 +33,4 @@ export default function mains(state = initialState, action){
         default:
             return state;
     }
-}
+};

@@ -2,20 +2,43 @@ import React, { useCallback, useReducer, useState } from 'react';
 import Room from './Room';
 
 function lightReducer (state, action) {
+
     // 비구조화할당
     const { bathLight, kitchenLight, livingLight, mainLight, totalLight } = state;
 
     switch (action.type) {
         case "bathLight":
-            return { ...state, bathLight: !bathLight }
+            return {
+                        ...state,
+                        bathLight: !bathLight,
+                        totalLight: (!bathLight && kitchenLight && livingLight && mainLight ) ? true : false
+                    }
         case "kitchenLight":
-            return { ...state, kitchenLight: !kitchenLight }
+            return {
+                        ...state,
+                        kitchenLight: !kitchenLight,
+                        totalLight: (bathLight && !kitchenLight && livingLight && mainLight ) ? true : false
+                    }
         case "livingLight":
-            return { ...state, livingLight: !livingLight }
+            return {
+                        ...state,
+                        livingLight: !livingLight,
+                        totalLight: (bathLight && kitchenLight && !livingLight && mainLight ) ? true : false
+                    }
         case "mainLight":
-            return {...state, mainLight: !mainLight}
+            return {
+                        ...state,
+                        mainLight: !mainLight,
+                        totalLight: (bathLight && kitchenLight && livingLight && !mainLight ) ? true : false
+                    }
         case "totalLight":
-            return { ...state, totalLight: !totalLight }
+            return {
+                        bathLight: totalLight ? false : true,
+                        kitchenLight: totalLight ? false : true,
+                        livingLight: totalLight ? false : true,
+                        mainLight: totalLight ? false : true,
+                        totalLight: !totalLight
+                    }
         default:
             return state;
     }
@@ -24,7 +47,8 @@ function lightReducer (state, action) {
 
 //전등ALL 추가
 function Callback02() {
-    //각각 방에 대한 불들어온 상태를 state선언 → reducer 로 변경
+    
+    // 초기 state 변수 선언
     const initialState = {
         bathLight: false,
         kitchenLight: false,
@@ -33,7 +57,7 @@ function Callback02() {
         totalLight: false
     }
 
-    // 리듀서 처리
+    // useReducer 호출
     const [light, dispatch] = useReducer(lightReducer, initialState);
 
     // 비구조화할당
@@ -41,41 +65,24 @@ function Callback02() {
 
     //setState를 처리하는 이벤트 함수
     const toggleBath = useCallback(() => {
-        if(!bathLight && kitchenLight && livingLight && mainLight){
-            dispatch({type: "totalLight"})
-        }
         dispatch({type: "bathLight"})
     },[]);
     const toggleKitchen = useCallback(() => {
-        if(bathLight && !kitchenLight && livingLight && mainLight){
-            dispatch({type: "totalLight"})
-        }
         dispatch({type: "kitchenLight"})
     },[]);
     const toggleLiving = useCallback(() => {
-        if(bathLight && kitchenLight && !livingLight && mainLight){
-            dispatch({type: "totalLight"})
-        }
         dispatch({type: "livingLight"})
     },[]);
     const toggleMain = useCallback(() => {
-        if(bathLight && kitchenLight && livingLight && !mainLight){
-            dispatch({type: "totalLight"})
-        }
         dispatch({type: "mainLight"})
     },[]);
     
     //전등ALL의 이벤트 함수
     const toggleTotal = useCallback(() => {
-        if(totalLight){ //전등ALL에 불이 들어와있다면
-            //4개등도 같이 꺼져야함
-            dispatch({type: "totalLight"})
-        }else{
-            dispatch({type: "totalLight"})
-        }
-
+        //전등ALL에 불이 들어와있다면
+        //4개등도 같이 꺼져야함
         dispatch({type: "totalLight"})
-    },[totalLight]);
+    },[]);
 
     return (
         <div>

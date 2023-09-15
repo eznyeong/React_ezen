@@ -21,15 +21,19 @@ const BodyBlock = styled.div`
 `;
 
 function App() {
-  <BodyBlock>
-    <GlobalStyle />
-    {/* 페이지 이동이 없을 시 Header 지정 */}
-    <Header />
-    {/* <Routes> */}
-      {/* 페이지 이동이 있을 시 이쪽에 처리 */}
-    {/* </Routes> */}
-    {/* 페이지 이동이 없을 시 Footer 지정 */}
-  </BodyBlock>
+
+  return(
+    <BodyBlock>
+      <GlobalStyle />
+      {/* 페이지 이동이 없을 시 Header 지정 */}
+      <Header />
+        {/* <Routes> */}
+        {/* 페이지 이동이 있을 시 이쪽에 처리 */}
+        {/* </Routes> */}
+      {/* 페이지 이동이 없을 시 Footer 지정 */}
+    </BodyBlock>
+  )
+
 }
 
 export default App;

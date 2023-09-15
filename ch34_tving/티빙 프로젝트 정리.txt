@@ -31,8 +31,6 @@
 [App.js]
     1. 
 
-
-
 [apis/main.js] - 메인이미지 데이터 호출 (axios)
     1. axios호출
     2. axios를 통해서 데이터를 얻는 함수 내보내기

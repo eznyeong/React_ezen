@@ -18,9 +18,9 @@ const middleware = store => next => action => {
 }
 // 다중 커링 : 콜백 함수를 여러번 호출
 
-// 일반함수 다중 커러
-function middleware(stor){
-    return function(next)P{
+// 일반함수 다중 커링
+function middleware(store){
+    return function(next){
         function(action){
             // 하고 싶은 작업 처리
         }
