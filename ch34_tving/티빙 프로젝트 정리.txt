@@ -10,7 +10,7 @@
     yarn global add json-server
     yarn add concurrently
     yarn add axios
-    npm install react-icons --save    
+    npm install react-icons --save
 
 2. Redux-Thunk를 이용한 프로젝트 폴더 구조
     1. modules : 리덕스 모듈 - 액션, 액션생성함수, 리듀서를 담는 파일을 모아놓는 폴더

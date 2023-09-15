@@ -13,7 +13,7 @@ function SwiperTest() {
         <div>
             {/* 스와이퍼 기능을 전체 묶는 컴포넌트 */}
             <Swiper
-                effect='fade'
+                effect={"fade"}
                 loop={true}
                 navigation={true}
                 pagination={{
@@ -25,12 +25,12 @@ function SwiperTest() {
                 }}
                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
             >
-                {/* 슬라이드 한장한장을 의미하는 컴포넌트 */}
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
+                {/* 슬라이드 한장한장의 의미하는 컴포넌트 */}
+                <SwiperSlide>슬라이드1</SwiperSlide>
+                <SwiperSlide>슬라이드2</SwiperSlide>
+                <SwiperSlide>슬라이드3</SwiperSlide>
+                <SwiperSlide>슬라이드4</SwiperSlide>
+                <SwiperSlide>슬라이드5</SwiperSlide>
             </Swiper>
         </div>
     );
