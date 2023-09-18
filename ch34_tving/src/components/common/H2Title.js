@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 //스타일 컴포넌트 생성
 const TitleBlock = styled.div`
-    h2 {
+    h2{
         font-size: 24px; color: #fff;
     }
 `;

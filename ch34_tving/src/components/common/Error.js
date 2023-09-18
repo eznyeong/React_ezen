@@ -1,44 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CiCircleAlert } from "react-icons/ci";
-import { useNavigate } from 'react-router-dom'; //페이지 이동 처리
+import { useNavigate } from 'react-router-dom'; //페이지이동 처리
 
-//스타일 컴포넌트
+//스타일 컴포넌트 생성
 const ErrorBlock = styled.div`
-    width: 800px; padding-top: 120px; margin: 0 auto 150px;
-    text-align: center;
-    > svg{ 
-        width : 100px; height: 100px; margin-bottom: 30px;
-        fill: rgba(255,255,255,0.8);  
+width: 800px; padding-top: 120px; margin: 0 auto 150px;
+text-align: center;
+> svg{ 
+    width : 100px; height: 100px; margin-bottom: 30px;
+    fill: rgba(255,255,255,0.8);  
+}
+h3{  
+    margin-bottom: 30px; font-size: 36px;
+    .red{ color: #e9003b; } 
+}
+.basic_explain{
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.8); line-height: 1.8;
+}
+a{ text-decoration: underline; }
+.inquiry_explain{
+    margin-top: 5px; margin-bottom: 30px;
+    color: rgba(255,255,255,0.8); 
+}
+.page_btn{
+    display: flex; justify-content: center;
+    li{
+        width: 250px; height: 50px;
+        border: 1px solid #fff; border-radius: 5px;
+        font-size: 18px; line-height: 46px;
+        cursor: pointer;
+        &:first-child{ margin-right: 10px; }
     }
-    h3{  
-        margin-bottom: 30px; font-size: 36px;
-        .red{ color: #e9003b; } 
-    }
-    .basic_explain{
-        margin-bottom: 20px;
-        color: rgba(255,255,255,0.8); line-height: 1.8;
-    }
-    a{ text-decoration: underline; }
-    .inquiry_explain{
-        margin-top: 5px; margin-bottom: 30px;
-        color: rgba(255,255,255,0.8); 
-    }
-    .page_btn{
-        display: flex; justify-content: center;
-        li{
-            width: 250px; height: 50px;
-            border: 1px solid #fff; border-radius: 5px;
-            font-size: 18px; line-height: 46px;
-            cursor: pointer;
-            &:first-child{ margin-right: 10px; }
-        }
-    }
+}
 `;
 
 //에러구역 표시하는 프레젠테이셔널 컴포넌트
 function Error() {
-    const navigete = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <ErrorBlock>
@@ -52,8 +52,8 @@ function Error() {
             <a href="#!">고객센터문의하기 &gt;</a>
             <p className="inquiry_explain">전화 : 1600-0000(평일 09시~18시) / 이메일 tving@cj.net</p>
             <ul className="page_btn">
-                <li onClick={() => navigete(-1)}>이전 페이지로 이동</li>
-                <li onClick={() => navigete('/')}>메인 페이지로 이동</li>
+                <li onClick={() => navigate(-1)}>이전 페이지로 이동</li>
+                <li onClick={() => navigate('/')}>메인 페이지로 이동</li>
             </ul>
         </ErrorBlock>
     );

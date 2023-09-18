@@ -4,6 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import MainPage from './pages/MainPage';
+import TvingBestPage from './pages/TvingBestPage';
+import ParamountPage from './pages/ParamountPage';
+import ParaTopPage from './pages/ParaTopPage';
 
 //스타일지정 - 공통 CSS작성 - createGlobalStyle컴포넌트 사용
 import styled, { createGlobalStyle } from 'styled-components';
@@ -30,6 +33,9 @@ function App() {
       <Routes>
         {/* 페이지 이동이 것은 이쪽에 처리 */}
         <Route path="/" element={<MainPage />} />
+        <Route path="/paramount" element={<ParamountPage />} />
+        <Route path="/tvingbest/:id" element={<TvingBestPage />} />
+        <Route path="/paratop/:id" element={<ParaTopPage />} />
       </Routes>
       {/* 페이지 이동이 없을 footer지정 */}
       <Footer />
