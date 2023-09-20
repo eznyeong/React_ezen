@@ -10,7 +10,7 @@ export const getParaTops = async () => {
 }
 
 //3. axios를 통해서 데이터 한개한개를 얻는 함수 내보내기
-export const getParaTopsById = async id => {
+export const getParaTopById = async id => {
     const response = await axios.get(`http://localhost:4000/paratop/${id}`);
     return response.data;
 }
