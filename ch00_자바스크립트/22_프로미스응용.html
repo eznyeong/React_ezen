@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - 함수</title>
+</head>
+<body>
+    <h2>JavaScript Promise</h2>
+    <p id="test"></p>
+    <script>
+        const test = document.getElementById('test');
+
+        function output(x){ //출력함수
+            test.innerHTML = x;
+        }
+
+        // 정수를 받아서 양수면 잘 입력되었다고 하고, 음수면 잘못 입력되었다고 봄
+        let testPromise = new Promise(function(testResolve, testReject){
+            // 생성 코드
+            let num = prompt('양수를 입력하세요', '정수입력');
+
+            if(num > 0){
+                testResolve('양수로 잘 입력했음');
+            } else{
+                testReject('음수로 잘못 입력했음');
+            }
+        });
+
+        // 소비 코드
+        testPromise.then(
+            function(value){output(value);}
+            function(error){output(error);}
+        );
+    </script>
+</body>
+</html>

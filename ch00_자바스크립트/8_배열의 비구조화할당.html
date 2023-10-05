@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체문법</title>
+</head>
+<body>
+    <script>
+        // 비구조화할당 : 객체나 배열을 값을 각각의 변수에 해체해서 사용
+
+        //1. 기존 코드(ES6전)
+        //배열선언
+        const animalList = ['CAT', 'DOG', 'TIGER'];
+
+        //각각 변수담기
+        const cat = animalList[0];
+        const dog = animalList[1];
+        const tiger = animalList[2];
+
+        //각각호출
+        console.log(cat);
+        console.log(dog);
+        console.log(tiger);
+
+        //2. 비구조화할당 처리
+        const [cat1,dog1,tiger1] = ['CAT', 'DOG', 'TIGER'];
+        const [cat2,dog2,tiger2] = animalList;
+
+        //3. 나머지 패턴
+        // ... : 스프레드 오퍼레이터
+        const newAnimal  = [...animalList, 'MONKEY'];
+        console.log(newAnimal);
+        
+        // 4. 비구조화할당 나머지패턴
+        const [cat3, ...rest3] = animalList;
+        console.log(cat3);
+        console.log(rest3);
+
+        // 5. 비구조화할당 기본값 지정
+        const [cat4,dog4,tiger4, monkey4='MONKEY'] = ['CAT', 'DOG', 'TIGER'];
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* 작성은 css와 같지만 클래스로 선택자 작성 */
+
+.title1 {
+    background-color: black;
+    color: yellow;
+}
+
+.title2 {
+    background-color: black;
+    color: pink;
+}

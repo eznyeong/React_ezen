@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강제에러</title>
+</head>
+<body>
+    <p>1~10사이 숫자를 입력하시오.</p>
+    <input id="numBox" type="text">
+    <button type="button" id="btn">테스트</button>
+    <p id="errorText"></p>
+
+    <script>
+        //문서객체 선택
+        var numBox = document.getElementById('numBox');
+        var btn = document.getElementById('btn');
+        var errorText = document.getElementById('errorText');
+
+        // 1~10사이 숫자가 아니면 사용자 지정 오류메시지 생성
+        btn.addEventListener('click', function(){
+            // 기존에 들어간 arrorText는 제거
+            errorText.innerHTML = '';
+
+            // input의 value값을 담는 변수
+            var v = numBox.value;
+
+            try{
+                if(v == ''){
+                    throw "비어있음";
+                }
+                if(isNaN(v)){ //숫자가 아닌 경우
+                    throw "숫자가 아님";
+                }
+
+                if(v < 1){
+                    throw '숫자가 너무 작음';
+                }
+                if(v > 10){
+                    throw '숫자가 너무 큼';
+                }
+            }
+
+            catch(err){
+                errorText.innerHTML = '에러메시지 : ' + err;
+            }
+        });
+    </script>
+</body>
+</html>

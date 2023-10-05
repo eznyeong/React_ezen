@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트문법</title>
+</head>
+<body>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3" onclick="alert('버튼 3 클릭')">버튼3</button>
+    <h1><a href="http://naver.com" id="link">네이버 바로가기</a></h1>
+    <script>
+        //문서객체
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+
+        //이벤트 객체 : 이벤트 발생됐을 때 생성되는 정보는 담는 객체
+        //모든 객체는 속성과 매서드를 갖고 있음
+        //객체.속성명
+        //객체.매서드명()
+
+        //이벤트 작성법1. 속성방식
+        btn1.onclick = function(event){
+            alert('버튼1 클릭');
+            alert(event.type); // type : 이벤트타입을 반환하는 속성
+        }
+
+        //이벤트 작성2. 매서드방식
+        btn2.addEventListener('click',function(e){
+            alert('버튼2 클릭');
+            alert(e.type);
+        })
+
+        //이벤트 작성3. 인라인 이벤트 : 태그의 속성으로 이벤트 작성 
+
+
+
+        // 기본이벤트 : 문서객체가 기본적으로 갖고 있는 이벤트
+        // 1. a 태그의 기본이벤트 : 클릭하면 페이지가 이동되는 기본 이벤트
+        // 2. form태그의 기본이벤트 : 폼안의 데이터를 전송하는 기본 이벤트
+
+        // e.preventDefault(); : 기본이벤트 제거
+
+        // 문서객체 선택
+        const link = document.getElementById('link');
+        link.addEventListener('click',function(e){ // e : 이벤트 객체를 의마하는 매개변수
+            e.preventDefault();
+
+            const q = confirm('네이버로 이동하시겠습니까?');
+
+            const url = this.getAttribute('href');
+            if(q){
+                window.open(url);
+            }
+        })
+    </script>
+</body>
+</html>
