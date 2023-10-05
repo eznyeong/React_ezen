@@ -1,0 +1,21 @@
+.box{
+    float: left; margin-right: 10px;
+}
+.off{
+    cursor: pointer;
+    width: 120px; height: 150px; margin: 10px 0;
+    padding-top: 110px; box-sizing: border-box;
+    background-color: transparent;
+    background-image: url(./light_off.png);
+    background-repeat: no-repeat;
+    background-position: center 10px;
+}
+.on{
+    cursor: pointer;
+    width: 120px; height: 150px; margin: 10px 0;
+    padding-top: 110px; box-sizing: border-box;
+    background-color: transparent;
+    background-image: url(./light_on.png);
+    background-repeat: no-repeat;
+    background-position: center 10px;
+}

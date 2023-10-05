@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - 모듈화</title>
+</head>
+<body>
+    <!-- <script src="test03.js"></script> -->
+    <script type="module">
+        // import : 외부 JS의 변수나 함수를 불러오는 키워드
+        // 모듈화 실행은 서버환경, type="module" 작성해야 가능
+
+        // 1.
+        // import {num, str} from './test03.js';
+
+        // alert(num); // 외부 변수를 호출
+        // alert(str);
+
+        // 2.
+        // import a from './test03.js'; // export default는 { } 안씀
+
+        // alert(a)
+
+        // 3.
+        import * as test3 from './test03.js'; // import 변수명 as 별명 from '경로';
+
+        alert(test3.num);
+    </script>
+</body>
+</html>

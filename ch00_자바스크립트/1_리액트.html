@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><!-- html 언어 -->
+  <head>
+    <!-- 리액트 플러그인 -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+			/* 리액트 언어 : JS 근간 */
+			function Hello() {
+				return <h1>안녕하세요!</h1>;
+			}
+
+			ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체문법</title>
+</head>
+<body>
+    <script>
+        // 기존 객체
+        var obj01 = {
+            속성명: 값,
+            매서드명: function(){
+
+            }
+        }
+
+        let test = 10;
+        // 1. 속성명과 속성값이 같으면 한번만 작성
+        const obj02 = {
+            //test: test - 꼭 이렇게 작성했으나 es6부터 바뀜
+            test
+        }
+
+        let a = "테스트", b = 40, c = {};
+        const test02 = {
+            a,
+            b,
+            c
+        }
+
+        // 2. 매서드 사용시에 function(){} 생략
+        // 2-1. 코드
+
+        const test03 = {
+            aaa : '안녕',
+            bbb : function(){}
+        }
+        // 2-2. function 생략
+        const test04 = {
+            aaa: '안녕',
+            bbb(){
+                
+            }
+        }
+    </script>
+</body>
+</html>
