@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +7,35 @@
 </head>
 <body>
     <script>
-        //redux에서는 action을 사용하는데, redux-saga는 액션을 모니터링 할 수 있음
 
-        //인사 제너레이터 선언
+        // redux에서는 action을 사용하는데, redux-saga는 액션을 모니터링할 수 있음
+        
+        // 인사제너레이터 선언
         function* greetingGenerator(){
             console.log('모니터링 시작');
 
-            whilet(true){ //무한제네리이터
-                const action = yield
+            while(true){ // 무한 제너레이터 처리
+                const action = yield;
 
                 if(action.type === 'HELLO'){
-                    console.log('안녕하세요!')
-                } else(action.type === 'BYE'){
-                    console.log('안녕히 가세요!')
+                    console.log('안녕하세요!');
+                }
+
+                if(action.type === 'BYE'){
+                    console.log('안녕히 가세요!');
                 }
             }
         }
-        
-        const greet = greetingGenerator(); //호출했다가 가니라 인스턴스에 제너레이터를 처리
 
-        //next() 사용하지 않는 이상 계산처리되자 않음
+        const greet = greetingGenerator(); // 호출했다기 보다는 인스턴스에 제너레이터를 처리
 
-        greet.next(); //모니터링을 시작하는 첫 콘솔
-        greet.next
+        // next()를 사용하지 않는 이상 계산처리되지 않음
+
+        greet.next(); // 모니터링을 시작하는 첫 콘솔
+        greet.next({type: 'HELLO'});
+        greet.next({type: 'BYE'});
+        greet.next({type: 'BYE'});
+
     </script>
 </body>
 </html>

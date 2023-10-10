@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제너레이터 문법</title>
+</head>
+<body>
+    <script>
+
+        // Generator 객체 : generator function을 반환하면, 반복 가능한 프로토콜과 반복자 프로토콜을 준수하는 객체
+        // 함수를 특정구간에 멈춰 놓을 수도 있고, 원할 때 다시 돌아가게도 처리, 여러 번 반복해서 결과를 처리
+
+        // 함수 리턴관련 문법
+        function testFunction(){
+            return 1; // 1만 호출
+            return 2;
+            return 3;
+            return 4;
+            return 5;
+        }
+        // 지금 만든 함수는 이상한 함수
+        // return을 여러 번 쓰는 것은 불가능!
+
+        console.log(testFunction());
+
+        // Generator 객체를 사용하면 위의 문법에서 값을 순차적으로 반환할 수 있음
+        function* generatorFx(){
+            yield 1;
+            yield 2;
+            yield 3;
+            yield 4;
+            yield 5;
+        }
+
+        const g = generatorFx();
+
+        // generator의 메서드
+        // 1. next() : yield 표현식을 통해 yield된 값을 반환
+        //             value와 done으로 이루어진 객체로 반환. || .value 붙이면 value 값만 확인 가능
+        // 2. return() : 주어진 값을 반환하고 제너레이터를 종료
+        // 3. throw() : 제너레이터의 오류를 발생
+
+        console.log(g.next().value);
+        console.log(g.next().value);
+        console.log(g.next().value);
+        console.log(g.next().value);
+        console.log(g.next().value);
+
+        /* 
+            * generator 객체 문법
+            function* 제네레이터함수명(){
+                yield 값;
+            }
+            const 인스턴스명 = 제네레이터함수호출();
+        */
+
+        // 무한 제너레이터
+        function* infinite(){
+            let index = 0;
+
+            while(true){
+                yield index++;
+            }
+        }
+
+        const inf = infinite();
+
+        for(let i=0;i<100;i++){
+            console.log(inf.next().value);
+        }
+
+    </script>
+</body>
+</html>
